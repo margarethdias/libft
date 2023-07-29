@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
+/*   By: meg <meg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 19:03:50 by mdias             #+#    #+#             */
-/*   Updated: 2023/07/28 19:22:46 by mdias            ###   ########.fr       */
+/*   Updated: 2023/07/29 15:55:30 by meg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (!(allocd_mem = malloc(total_size)))
 		return (NULL);
 	ft_bzero(allocd_mem, total_size);
-	return (allocd_mem);	
+	return (allocd_mem);
 }

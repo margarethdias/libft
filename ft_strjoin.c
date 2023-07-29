@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meg <meg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/26 18:54:57 by mdias             #+#    #+#             */
-/*   Updated: 2023/07/29 15:56:13 by meg              ###   ########.fr       */
+/*   Created: 2023/07/29 16:42:17 by meg               #+#    #+#             */
+/*   Updated: 2023/07/29 17:16:54 by meg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
+	char	*concatd_str;
+	size_t	size_str;
 
-	if (n == 0)
-		return (0);
-	i = 0;
-	while ((s1[i] == s2[i]) && (s1[i] != '\0' && s2[i] != '\0') && (i < n - 1))
-	{
-		i++;
-	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	size_str = ft_strlen(s1) + ft_strlen(s2) + 1;
+	if (!(concatd_str = (char *)malloc(size_str)))
+		return (NULL);
+	ft_memcpy(concatd_str, s1, size_str);
+	ft_strlcat (concatd_str, s2, size_str);
+	return (concatd_str);
 }
