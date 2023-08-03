@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: meg <meg@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/29 17:21:40 by meg               #+#    #+#             */
-/*   Updated: 2023/07/29 18:17:08 by meg              ###   ########.fr       */
+/*   Created: 2023/08/02 18:08:00 by mdias             #+#    #+#             */
+/*   Updated: 2023/08/02 21:08:05 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (ft_strchr(set, s1[i - 1]) && i)
 		i--;
 	return (ft_substr(s1, 0, i));
-
 }
