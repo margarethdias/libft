@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:54:29 by mdias             #+#    #+#             */
-/*   Updated: 2023/08/02 17:20:34 by mdias            ###   ########.fr       */
+/*   Updated: 2023/08/03 21:08:41 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
