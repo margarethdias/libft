@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 15:58:04 by mdias             #+#    #+#             */
-/*   Updated: 2023/08/02 21:06:26 by mdias            ###   ########.fr       */
+/*   Updated: 2023/08/08 22:04:27 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,12 @@ static char	*get_next_word(char const *str, char c)
 	return (word);
 }
 
-static void	cleanup(char **tab, int i)
+static void	*cleanup(char **tab, int i)
 {
 	while (i)
 		free(tab[--i]);
 	free(tab);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -71,8 +72,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 
 	i = 0;
-	if (!s || !(tab = (char **)malloc((count_words(s, c) + 1)
-				* sizeof(char *))))
+	tab = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!s || !tab)
 		return (NULL);
 	while (*s)
 	{
@@ -80,11 +81,9 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s != c && *s != '\0')
 		{
-			if (!(tab[i] = get_next_word(s, c)))
-			{
-				cleanup(tab, i);
-				return (NULL);
-			}
+			tab[i] = get_next_word(s, c);
+			if (!tab[i])
+				return (cleanup(tab, i));
 			while (*s != c && *s != '\0')
 				s++;
 			i++;

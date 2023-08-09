@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 21:15:58 by mdias             #+#    #+#             */
-/*   Updated: 2023/08/03 20:58:06 by mdias            ###   ########.fr       */
+/*   Updated: 2023/08/08 21:02:40 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ char	*ft_itoa(int n)
 
 	nbr = n;
 	len = count_digits(n);
-	if (!(str = (char *)malloc(len + 1)))
+	str = (char *)malloc(len + 1);
+	if (!str)
 		return (NULL);
 	i = len - 1;
 	if (nbr < 0)
