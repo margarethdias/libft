@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 13:09:06 by mdias             #+#    #+#             */
-/*   Updated: 2023/08/08 22:12:05 by mdias            ###   ########.fr       */
+/*   Updated: 2023/08/11 18:10:36 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	if (start >= srclen)
 		return (ft_calloc(1, 1));
-	if (len > srclen)
-		len = srclen - start + 1;
+	if (len >= srclen)
+		len = srclen - start;
 	new_str = (char *)malloc(len + 1);
 	if (!new_str)
 		return (0);
