@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 21:51:26 by mdias             #+#    #+#             */
-/*   Updated: 2023/07/28 17:42:12 by mdias            ###   ########.fr       */
+/*   Updated: 2023/08/13 16:50:23 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-
-// int	main(void)
-// {
-// 	char	big[] = "Margareth Dias";
-// 	char	little[] = "Dias";
-// 	size_t	len = ft_strlen(big);
-// 	char	*result;
-// 	char	*result_original;
-// 	result = ft_strnstr(big, little, len);
-// 	result_original = strnstr(big, little, len);
-// 	printf("%s\n", result);
-// 	printf("%s\n", result_original);
-// }

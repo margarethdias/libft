@@ -55,10 +55,12 @@ B_OBJS = $(B_SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
 
 bonus: $(B_OBJS)
-	ar rc $(NAME) $(B_OBJS)
+
+%.o: %.c 
+	$(CC) $(CFLAGS) -c $< -o $@
+	ar rcs $(NAME) $@
 
 clean:
 	rm -f $(OBJS) $(B_OBJS)
@@ -68,4 +70,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re, bonus
+.PHONY: all clean fclean re bonus

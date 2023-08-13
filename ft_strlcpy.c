@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 19:15:40 by mdias             #+#    #+#             */
-/*   Updated: 2023/07/24 19:38:27 by mdias            ###   ########.fr       */
+/*   Updated: 2023/08/13 16:25:25 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 	return (i);
 }
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char src[] = "Hello";
-// 	char dest[5];
-// 	printf("String de origem: %s\n", src);
-// 	unsigned int length = ft_strlcpy(dest, src, 4);
-// 	printf("String de destino: %s\n", dest);
-// 	printf("Comprimento da string de origem: %u\n", length);
-// 	return 0;
-// }
